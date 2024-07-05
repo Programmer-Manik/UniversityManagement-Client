@@ -1,10 +1,10 @@
 import { Layout, Menu, MenuProps } from "antd";
-import {
-  UploadOutlined,
-  UserOutlined,
-  VideoCameraOutlined,
-} from "@ant-design/icons";
-import { createElement } from "react";
+// import {
+//   UploadOutlined,
+//   UserOutlined,
+//   VideoCameraOutlined,
+// } from "@ant-design/icons";
+// import { createElement } from "react";
 const { Header, Content, Footer, Sider } = Layout;
 
 const items: MenuProps["items"] = [
@@ -48,13 +48,13 @@ const MainLayout = () => {
         <div
           style={{
             color: "white",
-            textAlign: "center",
+            height:'4rem',
             display: "flex",
             justifyContent: "center",
-            justifyItems: "center",
+            alignItems:'center'
           }}
         >
-          <h1 style={{height:'4rem'}}>MH Uni</h1>
+          <h1>MH Uni</h1>
         </div>
         <Menu
           theme="dark"
