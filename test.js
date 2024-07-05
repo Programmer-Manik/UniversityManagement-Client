@@ -1,8 +1,3 @@
-import AdminDashboard from "../pages/admin/AdminDashboard";
-import CreateStudent from "../pages/admin/CreateStudent";
-import CreateAdmin from "../pages/admin/CreateAdmin";
-import CreateFaculty from "../pages/admin/CreateFaculty";
-
 const adminPaths2 = [
     {
         name:"Dashboard",
@@ -32,23 +27,10 @@ const adminPaths2 = [
 
 ]
 
+const newArray = adminPaths2.reduce((acc, item) => {
+    acc.push(item);
+    return acc;
 
-export const adminPaths = [
-    {
-        path: "dashboard",
-        element: <AdminDashboard />
-    },
-    {
-        path: "create-student",
-        element: <CreateStudent />
-    },
-    {
-        path: "create-admin",
-        element: <CreateAdmin />
-    },
-    {
-        path: "create-faculty",
-        element: <CreateFaculty />
-    },
-]
+},[])
 
+console.log(newArray)
