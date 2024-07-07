@@ -1,17 +1,15 @@
-import Login from "../../../pages/Login";
-import { baseApi } from "../../api/baseApi";
+import { baseApi } from '../../api/baseApi';
 
 const authApi = baseApi.injectEndpoints({
-    endpoints: (builder) => ({
-        Login: builder.mutation({
-            query: (payload) => ({
-                url: '/auth/login',
-                method: 'POST',
-                body: payload,
-            }),
-        })
+  endpoints: (builder) => ({
+    login: builder.mutation({
+      query: (userInfo) => ({
+        url: '/auth/login',
+        method: 'POST',
+        body: userInfo,
+      }),
     }),
-})
+  }),
+});
 
 export const { useLoginMutation } = authApi;
-
