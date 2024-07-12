@@ -13,6 +13,7 @@ const Login = () => {
   const [login, { error,  }] = useLoginMutation();
 
   const onSubmit = async (data) => {
+    // console.log(data);
     const userInfo = {
       id: data.userId,
       password: data.password,
