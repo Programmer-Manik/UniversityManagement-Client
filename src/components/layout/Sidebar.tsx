@@ -1,4 +1,3 @@
-
 import { selectCurrentUser } from "../../redux/features/auth/authSlice";
 import { useAppSelector } from "../../redux/hooks";
 import { adminPaths } from "../../routes/admin.routes";
@@ -10,51 +9,51 @@ import { Layout, Menu } from "antd";
 const { Sider } = Layout;
 
 const userRole = {
-    ADMIN: "admin",
-    FACULTY: "faculty",
-    STUDENT: "student"
-  };
-
+  ADMIN: "admin",
+  FACULTY: "faculty",
+  STUDENT: "student",
+};
 
 const Sidebar = () => {
-const user = useAppSelector(selectCurrentUser);
-let sidebarItems;
-switch (user!.role) {
+  const user = useAppSelector(selectCurrentUser);
+  let sidebarItems;
+  switch (user!.role) {
     case userRole.ADMIN:
-        sidebarItems = SidebarItemsGenerator(adminPaths, userRole.ADMIN);
-        break;
+      sidebarItems = SidebarItemsGenerator(adminPaths, userRole.ADMIN);
+      break;
     case userRole.FACULTY:
-        sidebarItems = SidebarItemsGenerator(facultyPaths, userRole.FACULTY);
-        break;
+      sidebarItems = SidebarItemsGenerator(facultyPaths, userRole.FACULTY);
+      break;
     case userRole.STUDENT:
-        sidebarItems = SidebarItemsGenerator(studentPaths, userRole.STUDENT); 
-        break;
+      sidebarItems = SidebarItemsGenerator(studentPaths, userRole.STUDENT);
+      break;
     default:
-
-        break;
-}
+      break;
+  }
   return (
     <Sider
-    breakpoint="lg"
-    collapsedWidth="0">
-    <div
-      style={{
-        color: "white",
-        height:'4rem',
-        display: "flex",
-        justifyContent: "center",
-        alignItems:'center'
-      }}
+      style={{ height: "100vh", position: "sticky", top: "0", left: "0" }}
+      breakpoint="lg"
+      collapsedWidth="0"
     >
-      <h1>MH Uni</h1>
-    </div>
-    <Menu
-      theme="dark"
-      mode="inline"
-      defaultSelectedKeys={["4"]}
-      items={sidebarItems}
-    />
-  </Sider>
+      <div
+        style={{
+          color: "white",
+          height: "4rem",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <h1>MH Uni</h1>
+      </div>
+      <Menu
+        theme="dark"
+        mode="inline"
+        defaultSelectedKeys={["4"]}
+        items={sidebarItems}
+      />
+    </Sider>
   );
 };
 
