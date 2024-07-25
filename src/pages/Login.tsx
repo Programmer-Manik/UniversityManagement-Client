@@ -1,5 +1,5 @@
 import { Button } from 'antd';
-import {  FieldValues, useForm } from 'react-hook-form';
+import {  FieldValues, useForm, useFormContext } from 'react-hook-form';
 import { useLoginMutation } from '../redux/features/auth/authApi';
 import { useAppDispatch } from '../redux/hooks';
 import { setUser, TUser } from '../redux/features/auth/authSlice';
@@ -11,12 +11,13 @@ import PHForm from '../components/from/PHForm';
 const Login = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
-  const { register, handleSubmit } = useForm({
-    defaultValues: {
-      userId: 'A-0001',
-      password: 'admin123',
-    },
-  });
+  // const { register, handleSubmit } = useForm({
+  //   defaultValues: {
+  //     userId: 'A-0001',
+  //     password: 'admin123',
+  //   },
+  // });
+
 
   const [login] = useLoginMutation();
 
