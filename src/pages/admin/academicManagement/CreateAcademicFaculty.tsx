@@ -1,7 +1,7 @@
 const CreateAcademicFaculty = () => {
   return (
     <div>
-      <h2>Welcome to the CreateAcademicFaculty page</h2>
+      <h1> This is CreateAcademicFaculty component </h1>
     </div>
   );
 };

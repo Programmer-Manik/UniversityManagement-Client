@@ -1,7 +1,7 @@
 const AcademicFaculty = () => {
   return (
     <div>
-      <h2>Welcome to the AcademicFaculty page</h2>
+      <h1> This is AcademicFaculty component </h1>
     </div>
   );
 };
